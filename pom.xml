@@ -55,7 +55,7 @@
         <resource>
             <directory></directory>
             <includes>
-                <include>**/*.*</include>
+                <include>**/Procfile</include>
             </includes>
         </resource>
     </resources>
