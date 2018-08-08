@@ -60,7 +60,7 @@
 		</plugins>
 
 
-		<resources>
+		<!-- <resources>
 			<resource>
 				<directory>src/main/resources</directory>
 				<includes>
@@ -73,7 +73,7 @@
 					<include>**/Procfile</include>
 				</includes>
 			</resource>
-		</resources>
+		</resources> -->
 	</build>
 
 
