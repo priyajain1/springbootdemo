@@ -38,7 +38,7 @@
 		</dependency>
 	</dependencies>
 
-	<build>
+	<!-- <build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -46,13 +46,12 @@
 			</plugin>
 			<plugin>
 				<groupId>com.heroku.sdk</groupId>
-				<artifactId>heroku-maven-plugin</artifactId><!-- heroku:deploy -->
+				<artifactId>heroku-maven-plugin</artifactId>heroku:deploy 
 				<version>2.0.3</version>
 				<configuration>
 					<processType>
 						<web>web: java -jar target/demo-0.0.1-SNAPSHOT.jar</web>
 					</processType>
-					<appName>springbootheroku1</appName>
 				</configuration>
 			</plugin>
 
@@ -60,7 +59,7 @@
 		</plugins>
 
 
-		<!-- <resources>
+		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
 				<includes>
@@ -73,8 +72,42 @@
 					<include>**/Procfile</include>
 				</includes>
 			</resource>
-		</resources> -->
-	</build>
+		</resources> 
+	</build>-->
+	<build>
+             <plugins>
+                    <plugin>
+                           <groupId>org.springframework.boot</groupId>
+                           <artifactId>spring-boot-maven-plugin</artifactId>
+                           <executions>
+                                 <execution>
+                                        <goals>
+                                               <goal>build-info</goal>
+                                        </goals>
+                                        <configuration>
+                                               <additionalProperties>
+                                                      <encoding.source>${project.build.sourceEncoding}</encoding.source>
+                                               <encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+                                                      <java.source>${maven.compiler.source}</java.source>
+                                                      <java.target>${maven.compiler.target}</java.target>
+                                               </additionalProperties>
+                                        </configuration>
+                                 </execution>
+                           </executions>
+                    </plugin>
+                    <plugin>
+                           <groupId>com.heroku.sdk</groupId>
+                           <artifactId>heroku-maven-plugin</artifactId>
+                           <version>2.0.3</version>
+                           <configuration>
+                                 <processTypes>
+                                        <web>java -jar target/demo-0.0.1-SNAPSHOT.jar</web>
+                                 </processTypes>
+                           </configuration>
+                    </plugin>
 
+             </plugins>
+       </build>
+	
 
 </project>
