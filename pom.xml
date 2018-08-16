@@ -53,7 +53,7 @@
 					<!--  <processType>
 						<web>web: java -jar target/demo-0.0.1-SNAPSHOT.jar</web>
 					</processType> -->
-					<appName>priyajain124</appName> 
+					<!-- <appName>priyajain124</appName> -->
 				</configuration>
 			</plugin>
 
