@@ -4,6 +4,7 @@ public class Topic {
 	String id;
 	String name;
 	String description;
+	String priya;
 	public String getId() {
 		return id;
 	}
